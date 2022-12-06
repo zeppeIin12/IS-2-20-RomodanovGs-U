@@ -11,13 +11,14 @@ using Ex1;
 using Ex22;
 using Ex3;
 using Ex4;
+using Ex5;
 
 namespace IS_2_20_RomodanovGs_U
 {
-    public partial class Form1 : Form
+    public partial class Menu : Form
     {
 
-        public Form1()
+        public Menu()
         {
             InitializeComponent();
         }
@@ -44,6 +45,12 @@ namespace IS_2_20_RomodanovGs_U
         {
             Form Kek3 = new Exx4();
             Kek3.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form Kek4 = new Form1();
+            Kek4.ShowDialog();
         }
     }
 }

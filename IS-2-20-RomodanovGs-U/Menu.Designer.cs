@@ -1,6 +1,6 @@
 ﻿namespace IS_2_20_RomodanovGs_U
 {
-    partial class Form1
+    partial class Menu
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -83,6 +83,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Задание №5";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
