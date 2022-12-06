@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Ex1;
 using Ex22;
 using Ex3;
+using Ex4;
 
 namespace IS_2_20_RomodanovGs_U
 {
@@ -37,6 +38,12 @@ namespace IS_2_20_RomodanovGs_U
         {
             Form Kek2 = new Exx3();
             Kek2.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form Kek3 = new Exx4();
+            Kek3.ShowDialog();
         }
     }
 }

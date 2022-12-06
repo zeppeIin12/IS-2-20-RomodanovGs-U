@@ -92,6 +92,10 @@
       <Project>{b1130509-317a-44cc-a3f7-34724f14bdaf}</Project>
       <Name>Ex3</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ex4\Ex4.csproj">
+      <Project>{f619818e-a2dd-480e-ba13-b772826abfd8}</Project>
+      <Name>Ex4</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
