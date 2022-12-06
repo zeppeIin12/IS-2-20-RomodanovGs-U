@@ -19,15 +19,15 @@ namespace Ex3
             InitializeComponent();
 
         }
-        Connect connect = new Connect("server=chuc.caseum.ru;port=33333;username=st_2_20_19;password=69816309;database=is_2_20_st19_KURS");
+        Connect connect = new Connect("server=chuc.caseum.ru;port=33333;username=st_2_20_20;password=92457063;database=is_2_20_st20_KURS");
         MySqlConnection conn;
         MySqlDataAdapter MyDA = new MySqlDataAdapter();
         DataTable DT = new DataTable();
         BindingSource BindingS = new BindingSource();
-        public void NumberBus()
+        public void Abonimets1()
         {
             DT.Clear();
-            string table = "SELECT route.id_route AS `id`, route.way AS `путь`, route.bus AS `автобус`, route.price AS `цена` FROM route";
+            string table = "SELECT Abonimets.id_aboniments AS `id`, Abonimets.type_of_training AS `Вид тренировки`, Abonimets.type_of_service AS `Вид занятия`, Abonimets.price AS `Цена` FROM Abonimets";
             conn.Open();
             MyDA.SelectCommand = new MySqlCommand(table, conn);
             MyDA.Fill(DT);
@@ -69,22 +69,22 @@ namespace Ex3
         }
 
 
-        private void Exx3_Load(object sender, EventArgs e)
-        {
-            conn = connect.Conn();
-            NumberBus();
-        }
+            private void Exx3_Load(object sender, EventArgs e)
+         {
+             conn = connect.Conn();
+             Abonimets1();
+         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string id = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
 
             conn.Open();
-            string info1 = "";
+            string info1 = "";  
             string info2 = "";
             string info3 = "";
             string info4 = "";
-            string sql = $"SELECT route.id_route AS `id`, route.way AS `путь`, route.bus AS `автобус`, route.price AS `цена` FROM route WHERE route.id_route = " + id;
+            string sql = $"SELECT Abonimets.id_aboniments AS `id`, Abonimets.type_of_training AS `Вид тренировки`, Abonimets.type_of_service AS `Вид занятия`, Abonimets.price AS `Цена` FROM Abonimets WHERE Abonimets.id_aboniments = " + id;
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -95,7 +95,7 @@ namespace Ex3
                 info4 = reader[3].ToString();
             }
             reader.Close();
-            MessageBox.Show("id:" + info1 + "путь:" + info2 + "автобус:" + info3 + "цена:" + info4);
+            MessageBox.Show("id:" + info1 + "Вид тренировки:" + info2 + "Вид занятия:" + info3 + "Цена:" + info4);
             conn.Close();
         }
 
